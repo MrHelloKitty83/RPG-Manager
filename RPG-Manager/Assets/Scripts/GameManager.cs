@@ -2,21 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    public PlayerInputManager PlayerManager;
+    public int curDay;
+    public int money;
+    public int cropInventory;
 
+    public CropData selectedCropToPlant;
 
-    // Start is called before the first frame update
-    void Start()
+    public event UnityAction onNewDay;
+
+    //Singleton
+    public static GameManager instance;
+
+    private void Awake()
+    {
+        if(instance != null && instance !=this) 
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance= this; 
+        }
+    }
+
+    public void SetNextDay()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnPlantCrop()
     {
-        Debug.Log(PlayerManager.playerCount);
+
+    }
+    public void OnHarvestCrop()
+    {
+
+    }
+    public void PurchaseCrop()
+    {
+
+    }
+    public bool CanPlantCrop()
+    {
+        return true;
+    }
+    public void OnMouseUpAsButton()
+    {
+        
+    }
+    private void UpdateStatsText()
+    {
+        
     }
 }
