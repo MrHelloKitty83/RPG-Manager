@@ -17,6 +17,18 @@ public class GameManager : MonoBehaviour
     //Singleton
     public static GameManager instance;
 
+    private void OnEnable()
+    {
+        Crops.onHarvestCrop += OnHarvestCrop;
+        Crops.OnPlantCrop += OnPlantCrop;
+    }
+
+    private void OnDisable()
+    {
+        Crops.onHarvestCrop -= OnHarvestCrop;
+        Crops.OnPlantCrop -= OnPlantCrop;
+    }
+
     private void Awake()
     {
         if(instance != null && instance !=this) 
@@ -33,13 +45,13 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    public void OnPlantCrop()
+    public void OnPlantCrop(CropData crop)
     {
-
+        cropInventory--;
     }
-    public void OnHarvestCrop()
+    public void OnHarvestCrop(CropData crop)
     {
-
+        money += crop.sellPrice;
     }
     public void PurchaseCrop()
     {
@@ -47,11 +59,7 @@ public class GameManager : MonoBehaviour
     }
     public bool CanPlantCrop()
     {
-        return true;
-    }
-    public void OnMouseUpAsButton()
-    {
-        
+        return cropInventory > 0;
     }
     private void UpdateStatsText()
     {
