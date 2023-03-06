@@ -22,15 +22,17 @@ public class FieldTile : MonoBehaviour
         //Set Default Grass Sprite
         sr.sprite = grassSprite;
     }
-    public void Interact ()
+    public void Interact (PlayerStats player)
     {
         if(!tilled)
         {
             Till();
         }
-        else if(!HasCrop() && GameManager.instance.CanPlantCrop())
+        else if(!HasCrop() && player.CanPlantCrop())
         {
-            PlantNewCrop(GameManager.instance.selectedCropToPlant);
+            CropData newcrop = player.crop;
+            newcrop.PlayerID = player.PlayerID;
+            PlantNewCrop(newcrop);
         }
         else if (HasCrop() && curCrop.CanHarvest())
         {
@@ -47,8 +49,7 @@ public class FieldTile : MonoBehaviour
 
         curCrop = Instantiate(cropPrefab,transform).GetComponent<Crops>();
         curCrop.Plant(crop);
-        GameManager.instance.onNewDay += OnNewDay;
-
+        GameManager.onNewDay += OnNewDay;
     }
 
     void Till()
@@ -68,14 +69,15 @@ public class FieldTile : MonoBehaviour
         }
     }
 
-    void OnNewDay()
+    void OnNewDay(int player)
     {
+        Debug.Log("Tile found new day.");
         if(curCrop==null)
         {
             tilled = false;
             sr.sprite = grassSprite;
 
-            GameManager.instance.onNewDay-= OnNewDay;
+            GameManager.onNewDay -= OnNewDay;
         }
         else if(curCrop != null)
         {

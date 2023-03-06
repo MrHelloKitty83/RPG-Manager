@@ -8,10 +8,10 @@ public class Crops : MonoBehaviour
     private CropData curCrop;
     private int plantDay;
     private int daysSinceLastWatered;
-
+        
     public SpriteRenderer sr;
 
-    public static event UnityAction<CropData> OnPlantCrop;
+    public static event UnityAction<CropData> onPlantCrop;
     public static event UnityAction<CropData> onHarvestCrop;
 
     public void Plant (CropData crop)
@@ -20,8 +20,7 @@ public class Crops : MonoBehaviour
         plantDay = GameManager.instance.curDay;
         daysSinceLastWatered = 1;
         UpdateCropSprite();
-
-        OnPlantCrop?.Invoke(crop);
+        onPlantCrop?.Invoke(crop);
     }
 
     public void NewDayCheck()

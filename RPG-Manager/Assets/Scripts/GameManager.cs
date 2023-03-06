@@ -9,14 +9,17 @@ public class GameManager : MonoBehaviour
     public int curDay;
     public int money;
     public int cropInventory;
+    public float DayTimer;
+    public float DayLength;
+
 
     public CropData selectedCropToPlant;
-
-    public event UnityAction onNewDay;
 
     //Singleton
     public static GameManager instance;
 
+    public static event UnityAction<int>onNewDay;
+/*
     private void OnEnable()
     {
         Crops.onHarvestCrop += OnHarvestCrop;
@@ -28,7 +31,7 @@ public class GameManager : MonoBehaviour
         Crops.onHarvestCrop -= OnHarvestCrop;
         Crops.OnPlantCrop -= OnPlantCrop;
     }
-
+*/
     private void Awake()
     {
         if(instance != null && instance !=this) 
@@ -41,10 +44,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        DayTimer += Time.deltaTime;
+        if(DayTimer > DayLength) //Every 30 seconds
+        {
+            Debug.Log("New DAY! Day is:" + curDay);
+            SetNextDay();
+            DayTimer -= DayLength; //Subtract 30 seconds
+        }
+    }
+
     public void SetNextDay()
     {
-        
+        curDay++;
+        onNewDay?.Invoke(curDay);
     }
+    /*
     public void OnPlantCrop(CropData crop)
     {
         cropInventory--;
@@ -65,4 +81,5 @@ public class GameManager : MonoBehaviour
     {
         
     }
+    */
 }
