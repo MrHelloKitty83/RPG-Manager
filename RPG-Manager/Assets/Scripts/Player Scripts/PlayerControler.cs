@@ -42,7 +42,7 @@ public class PlayerControler : MonoBehaviour
         
         if(hit.collider != null)
         {
-            FieldTile tile = hit.collider.GetComponent<FieldTile>();
+            IInteractable tile = hit.collider.GetComponent<IInteractable>();
             tile.Interact(gameObject.GetComponent<PlayerStats>());
         }
     }

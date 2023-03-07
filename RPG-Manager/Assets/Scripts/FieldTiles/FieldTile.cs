@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class FieldTile : MonoBehaviour
+public class FieldTile : MonoBehaviour, IInteractable
 {
     private Crops curCrop;
 
