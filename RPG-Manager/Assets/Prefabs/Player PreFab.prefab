@@ -375,6 +375,7 @@ MonoBehaviour:
   cropInventory: 10
   money: 100
   PlayerID: 0
+  camera: {fileID: 1888471842399530198}
 --- !u!1001 &9081743845356269609
 PrefabInstance:
   m_ObjectHideFlags: 0

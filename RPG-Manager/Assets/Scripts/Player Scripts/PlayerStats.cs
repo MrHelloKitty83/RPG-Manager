@@ -12,8 +12,7 @@ public class PlayerStats : MonoBehaviour
     public int cropInventory;
     public int money;
     public int PlayerID;
-
-
+    public Camera camera;
     private void OnEnable()
     {
         Crops.onHarvestCrop += OnHarvestCrop;
