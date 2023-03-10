@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInventoyItem
+public class SeedItem: IInventoyItem
 {
-    public Sprite sr { get; set; }
+    int buyValue = 0;
+    int sellValue = 0;
+
+    public Sprite sr { get; set ; }
     public bool isStackable { get; set; }
     public int stackMax { get; set; }
     public int stackSize { get; set; }
-    public int stackSizeAdjust {set => stackSize+=value; }
     public string description { get; set; }
 }
