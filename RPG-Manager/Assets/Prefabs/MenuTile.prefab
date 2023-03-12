@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5574387869820677235}
   - component: {fileID: 7105158961586582279}
   - component: {fileID: -8363254328874351026}
-  - component: {fileID: 7375818191783610589}
+  - component: {fileID: 7857915717172499097}
   m_Layer: 6
   m_Name: MenuTile
   m_TagString: Untagged
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &7375818191783610589
+--- !u!114 &7857915717172499097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03733f721261f6419ee393e03d68fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 2839805416896442953, guid: 62c6096d6f3cb4641b39c59e9852bf7a, type: 3}
+  ShopCanvas: {fileID: 2839805416896442954, guid: 62c6096d6f3cb4641b39c59e9852bf7a, type: 3}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -7,6 +8,7 @@ using UnityEngine.UIElements;
 public class MenuTile : MonoBehaviour, IInteractable
 {
     public Canvas ShopCanvas;
+
     public void Interact(PlayerStats player)
     {
         Debug.Log("Shop Tile");
