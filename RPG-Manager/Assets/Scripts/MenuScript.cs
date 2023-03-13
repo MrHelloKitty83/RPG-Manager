@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MenuScript : MonoBehaviour
 {
     public InventorySlot slot;
+    public Button initalFocusObject;
     InventorySlot[] slots = new InventorySlot[20];
     public GridLayoutGroup gridLayout;
     private void Start()
@@ -17,5 +18,15 @@ public class MenuScript : MonoBehaviour
             slots[i] = newSlot;
             newSlot.transform.SetParent(gridLayout.transform, false);
         }
+        initalFocusObject = slots[0].GetComponent<Button>();
+    }
+    private void OnEnable()
+    {
+        
+    }
+
+    private void SetFocus()
+    {
+        initalFocusObject.Select();
     }
 }

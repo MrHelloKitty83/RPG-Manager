@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
     public Item myItem;
-    public Sprite mySprite;
+    public Image myImage;
     public Sprite myDefaultSprite;
     public TextMeshProUGUI stackText;
     // Start is called before the first frame update
@@ -23,18 +24,24 @@ public class InventorySlot : MonoBehaviour
 
     void UpdateGUI()
     {
-        if (myItem == null)
+        Debug.Log("Im a wheat slot!");
+        if (myItem != null)
         {
-            mySprite = myItem.sprite;
+            Debug.Log("I have an item!");
+            myImage.sprite = myItem.sprite;
             if (myItem.isStackable)
             {
                 stackText.text = myItem.stackSize.ToString();
                 stackText.enabled = true;
             }
+            else
+            {
+                stackText.enabled = false;
+            }
         }
         else
         {
-            mySprite = myDefaultSprite;
+            myImage.sprite = myDefaultSprite;
             stackText.enabled = false;
         }
     }

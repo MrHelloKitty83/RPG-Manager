@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wheat Seed
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: ad618e975d39b9748a6a83e53a226296, type: 3}
-  IsStackable: 0
+  IsStackable: 1
   StackMax: 25
   StackSize: 1
   StackSizeMod: 0
