@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,10 +25,8 @@ public class InventorySlot : MonoBehaviour
 
     void UpdateGUI()
     {
-        Debug.Log("Im a wheat slot!");
         if (myItem != null)
         {
-            Debug.Log("I have an item!");
             myImage.sprite = myItem.sprite;
             if (myItem.isStackable)
             {

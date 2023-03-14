@@ -115,7 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slot: {fileID: 8259651306203182051, guid: fb76c11db4b04834384d29e4402c5b85, type: 3}
+  initalFocusObject: {fileID: 0}
   gridLayout: {fileID: 9025824415038448285}
+  myCanvas: {fileID: 2839805416896442954}
 --- !u!1 &2839805417118911145
 GameObject:
   m_ObjectHideFlags: 0

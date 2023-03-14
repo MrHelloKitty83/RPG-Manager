@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03733f721261f6419ee393e03d68fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopCanvas: {fileID: 2839805416896442954, guid: 62c6096d6f3cb4641b39c59e9852bf7a, type: 3}
+  menu: {fileID: 2656631613391078427, guid: 62c6096d6f3cb4641b39c59e9852bf7a, type: 3}

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -9,9 +11,9 @@ public class PlayerControler : MonoBehaviour
     public LayerMask interactLayerMask;
     public Rigidbody2D rig;
     public SpriteRenderer sr;
+    public PlayerInput playerInput;
 
     public float moveSpeed;
-
     private Vector2 moveInput;
     private bool interactInput;
 
@@ -59,5 +61,14 @@ public class PlayerControler : MonoBehaviour
             interactInput = true;
         }
     }
+    public void OnMenuInput(InputAction.CallbackContext context)
+    {
+        Debug.Log("Menu Input!");
+    }
 
+    internal void SwitchCurrentActionMap(string newMap)
+    {
+        Debug.Log("Switching Current Actio Map to: " + newMap);
+        playerInput.SwitchCurrentActionMap(newMap);
+    }
 }
