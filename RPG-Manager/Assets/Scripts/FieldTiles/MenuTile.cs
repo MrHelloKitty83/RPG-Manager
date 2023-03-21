@@ -21,7 +21,7 @@ public class MenuTile : MonoBehaviour, IInteractable
         canvas.worldCamera = player.camera;
         canvas.sortingLayerName = "Menu";
         eventSystem.playerRoot = newMenu;
-        eventSystem.firstSelectedGameObject = menu.FirstSelected().gameObject;
+        eventSystem.firstSelectedGameObject = newMenu.GetComponent<MenuScript>().FirstSelected().gameObject;
         Debug.Log("Meow");
     }
 }

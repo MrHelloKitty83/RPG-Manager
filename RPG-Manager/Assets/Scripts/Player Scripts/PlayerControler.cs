@@ -63,7 +63,7 @@ public class PlayerControler : MonoBehaviour
     }
     public void OnMenuInput(InputAction.CallbackContext context)
     {
-        Debug.Log("Menu Input!");
+            Debug.Log("Menu Input!");
     }
 
     internal void SwitchCurrentActionMap(string newMap)
